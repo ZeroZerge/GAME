@@ -349,11 +349,37 @@ public class Playing extends State implements Statemethods {
 
 				player.setRight(true);
 				break;
+			case KeyEvent.VK_J:
+			player.setAttacking(true);
+			break;
+			case KeyEvent.VK_K:
+			player.powerAttack();
+			break;
 			case KeyEvent.VK_SPACE:
 				player.setJump(true);
 				break;
 			case KeyEvent.VK_ESCAPE:
 				paused = !paused;
+			}
+			if (gameOver) {
+				switch (e.getKeyCode()) {
+					case KeyEvent.VK_J:
+						resetAll();
+						break;
+					case KeyEvent.VK_ESCAPE:
+						setGamestate(Gamestate.MENU);
+						break;
+				}
+			}
+			if (lvlCompleted) {
+				switch (e.getKeyCode()) {
+					case KeyEvent.VK_J:
+						loadNextLevel();
+						break;
+					case KeyEvent.VK_ESCAPE:
+						setGamestate(Gamestate.MENU);
+						break;
+				}
 			}
 	}
 

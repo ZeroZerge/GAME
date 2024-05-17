@@ -37,6 +37,7 @@ public class Game implements Runnable {
 	public Game() {
 		System.out.println("size: " + GAME_WIDTH + " : " + GAME_HEIGHT);
 		initClasses();
+		
 		gamePanel = new GamePanel(this);
 		new GameWindow(gamePanel);
 		gamePanel.requestFocusInWindow();

@@ -97,6 +97,11 @@ public class Menu extends State implements Statemethods {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		switch (e.getKeyCode()) {
+			case KeyEvent.VK_J:
+				setGamestate(Gamestate.PLAYING);
+				break;
+		}
 	}
 
 	@Override
